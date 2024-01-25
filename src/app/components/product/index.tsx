@@ -31,7 +31,7 @@ export default function ComponentProduct({ id, title, price, image }: IProduct) 
 					<Image src={image} alt={title} width={147} height={188} />
 					<Title>{title}</Title>
 					<Price>{price.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</Price>
-					<Button onClick={handleAddToCart} disabled={isAdded} isAdded={isAdded}>
+					<Button onClick={handleAddToCart} disabled={isAdded} isadded={isAdded.toString()}>
 							<ButtonAmount>
 									<Image src={iconShoppingCartWithPlusSign} alt="" />
 									<p>{getQuantity(id)}</p>

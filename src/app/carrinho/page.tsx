@@ -69,7 +69,7 @@ export default function PageCarrinho() {
 					<LoadSpinner src={loadSpinner} alt='' width={62} height={62} />
 				) : cart.length === 0 ? (
 					<Grid>
-						<Title>Parece que não há nada por aqui :(</Title>
+						<Title>Parece que não há nada por aqui :&#40;</Title>
 						<StyledImage src={imageOfAFemalePerson} alt="" />
 						<Button href="/">Voltar</Button>
 					</Grid>

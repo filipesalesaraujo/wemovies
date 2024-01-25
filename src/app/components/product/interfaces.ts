@@ -7,5 +7,5 @@ export interface IProduct {
 }
 
 export interface IButton {
-  isAdded?: boolean;
+  isadded: string;
 };

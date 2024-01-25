@@ -51,7 +51,7 @@ export const Button = styled.button<IButton>`
     opacity: 0.8;
   }
 
-  ${({ isAdded }) => isAdded && css`
+	${({ isadded }) => isadded === 'true' && css`
     background-color: green;
     cursor: default;
 
