@@ -1,5 +1,3 @@
-
-
 import type { Metadata } from "next";
 
 import { Open_Sans } from "next/font/google";
@@ -9,7 +7,10 @@ import "./globals.css";
 import LayoutHeader from "./layouts/header";
 
 import StyledComponentsProvider from "./providers/styled-components-provider";
-import CartProvider from "./providers/cart-provider";
+
+import dynamic from 'next/dynamic';
+
+const CartProvider = dynamic(() => import('./providers/cart-provider'), { ssr: false });
 
 const openSans = Open_Sans({ subsets: ["latin"] });
 

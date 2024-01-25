@@ -1,6 +1,7 @@
-'use client'
+'use client';
 
 import React, { createContext, useReducer, useContext, useEffect, useState } from 'react';
+
 import { useRouter } from 'next/navigation';
 
 export interface IProduct {
@@ -29,7 +30,7 @@ const ADD_TO_CART = 'ADD_TO_CART';
 const INCREASE_QUANTITY = 'INCREASE_QUANTITY';
 const DECREASE_QUANTITY = 'DECREASE_QUANTITY';
 const REMOVE_FROM_CART = 'REMOVE_FROM_CART';
-const CLEAR_CART = 'CLEAR_CART'; // Adicione uma nova ação
+const CLEAR_CART = 'CLEAR_CART';
 
 function cartReducer(state: IProduct[], action: { type: string; product: IProduct }) {
 	switch (action.type) {
@@ -53,31 +54,18 @@ function cartReducer(state: IProduct[], action: { type: string; product: IProduc
 		case REMOVE_FROM_CART:
 			return state.filter(product => product.id !== action.product.id);
 		case CLEAR_CART:
-			return []; // Limpa o carrinho
+			return [];
 		default:
 			return state;
 	}
 }
 
 export default function CartProvider({ children }: { children: React.ReactNode }) {
-
 	const router = useRouter();
-
-
 	const [isLoading, setIsLoading] = useState(false);
 	const initialState = typeof window !== 'undefined' ? JSON.parse(localStorage.getItem('cart') || '[]') : [];
 	const [cart, dispatch] = useReducer(cartReducer, initialState);
 	const totalQuantity = cart.reduce((total, product) => total + product.quantity, 0);
-
-
-
-
-	useEffect(() => {
-		const initialState = typeof window !== 'undefined' ? JSON.parse(localStorage.getItem('cart') || '[]') : [];
-		initialState.forEach((product: IProduct) => {
-			dispatch({ type: ADD_TO_CART, product });
-		});
-	}, []);
 
 	useEffect(() => {
 		if (typeof window !== 'undefined') {
@@ -118,15 +106,14 @@ export default function CartProvider({ children }: { children: React.ReactNode }
 	const finalizeOrder = async () => {
 		setIsLoading(true);
 		try {
-				dispatch({ type: CLEAR_CART, product: { id: '', title: '', price: 0, image: '', quantity: 0 } });
-				await router.push('/compra-realizada'); // Redireciona para a página "compra-realizada"
+			dispatch({ type: CLEAR_CART, product: { id: '', title: '', price: 0, image: '', quantity: 0 } });
+			await router.push('/compra-realizada');
 		} catch (error) {
-				console.error(error);
+			console.error(error);
 		} finally {
-				setIsLoading(false); // Termina o carregamento
+			setIsLoading(false);
 		}
-};
-
+	};
 
 	return (
 		<CartContext.Provider value={{ cart, totalQuantity, addToCart, getQuantity, handleIncrease, handleDecrease, handleRemove, finalizeOrder, isLoading }}>

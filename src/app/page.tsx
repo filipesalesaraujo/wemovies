@@ -1,3 +1,5 @@
+'use client';
+
 import LayoutProducts from "./layouts/products";
 
 export default function Home() {
