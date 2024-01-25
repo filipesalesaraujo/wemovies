@@ -29,6 +29,7 @@ export default function LayoutProducts() {
 				{products.map((product: IProduct) => (
 					<ComponentProduct
 						key={product.id}
+						id={product.id}
 						image={product.image}
 						title={product.title}
 						price={product.price}

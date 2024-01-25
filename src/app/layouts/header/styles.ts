@@ -10,7 +10,7 @@ export const Header = styled.header`
 `;
 
 export const Grid = styled.div`
-	max-width: 920px;
+	max-width: 960px;
 	width: 100%;
 
 	padding: 18px 10px;
@@ -29,7 +29,7 @@ export const Logo = styled(Link)`
 	}
 `
 
-export const Cart = styled.button`
+export const Cart = styled(Link)`
 	display: flex;
 	align-items: center;
 	background: none;
