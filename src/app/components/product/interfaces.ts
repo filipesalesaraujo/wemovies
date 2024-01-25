@@ -7,5 +7,5 @@ export interface IProduct {
 }
 
 export interface IButton {
-  isadded: string;
+	$isadded?: string;
 };
