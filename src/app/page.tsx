@@ -1,9 +1,10 @@
-import Image from "next/image";
+import LayoutProducts from "./layouts/products";
 
 export default function Home() {
-  return (
-    <main>
-      
-    </main>
-  );
+
+	return (
+		<main>
+			<LayoutProducts />
+		</main>
+	);
 }

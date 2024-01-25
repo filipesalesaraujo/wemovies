@@ -4,8 +4,9 @@ import { Open_Sans } from "next/font/google";
 
 import "./globals.css";
 
-import ComponentHeader from "./components/header";
 import StyledComponentsRegistry from "./lib/registry";
+
+import LayoutHeader from "./layouts/header";
 
 const openSans = Open_Sans({ subsets: ["latin"] });
 
@@ -24,7 +25,7 @@ export default function RootLayout({
 			<link rel="icon" href="/favicon.ico" sizes="any" />
 			<body className={openSans.className}>
 				<StyledComponentsRegistry>
-					<ComponentHeader />
+					<LayoutHeader />
 					{children}
 				</StyledComponentsRegistry>
 			</body>

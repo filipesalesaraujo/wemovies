@@ -7,7 +7,7 @@ import iconBasket from "../../../../public/svgs/header/icon-basket.svg";
 
 import { Cart, CartAmount, CartText, CartTitle, Grid, Header, LogoLink } from "./styles";
 
-export default function ComponentHeader() {
+export default function LayoutHeader() {
 	return (
 		<Header>
 			<Grid>
