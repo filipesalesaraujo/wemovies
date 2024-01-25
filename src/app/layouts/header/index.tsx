@@ -1,19 +1,16 @@
 'use client';
 
-import Link from "next/link";
 import Image from "next/image";
 
 import iconBasket from "../../../../public/svgs/header/icon-basket.svg";
 
-import { Cart, CartAmount, CartText, CartTitle, Grid, Header, LogoLink } from "./styles";
+import { Cart, CartAmount, CartText, CartTitle, Grid, Header, Logo } from "./styles";
 
 export default function LayoutHeader() {
 	return (
 		<Header>
 			<Grid>
-				<Link passHref href="/">
-					<LogoLink aria-label="Home page">WeMovies</LogoLink>
-				</Link>
+				<Logo href="/" aria-label="Home page">WeMovies</Logo>
 				<Cart role="button" aria-label="Meu Carrinho">
 					<CartText>
 						<CartTitle>Meu Carrinho</CartTitle>

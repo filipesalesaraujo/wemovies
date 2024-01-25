@@ -1,3 +1,4 @@
+import Link from "next/link";
 import styled from "styled-components";
 
 export const Header = styled.header`
@@ -18,7 +19,7 @@ export const Grid = styled.div`
 	align-items: center;
 `;
 
-export const LogoLink = styled.div`
+export const Logo = styled(Link)`
 	font-size: 20px;
 	font-weight: 700;
 	transition: 0.3s opacity;
