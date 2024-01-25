@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
 export const Section = styled.section`
 	display: flex;
@@ -62,12 +62,19 @@ export const GridCart = styled.div`
 	border-radius: 4px;
 	background-color: #fff;
 	padding: 24px;
-	margin-top: 24px;
+	margin: 24px 16px;
+	@media (max-width: 768px) {
+		padding: 16px;
+	}
+
 `;
 
 export const Header = styled.div`
 	display: flex;
 	width: 100%;
+	@media (max-width: 768px) {
+		display: none;
+	}
 `;
 
 export const HeaderProduct = styled.div`
@@ -104,6 +111,9 @@ export const Body = styled.div`
 	border-bottom: 1px solid #999999;
 	padding: 21px 0;
 	margin-bottom: 21px;
+	@media (max-width: 768px) {
+		display: none;
+	}
 `;
 
 export const BodyProduct = styled.div`
@@ -202,7 +212,7 @@ export const Remove = styled.button`
 	}
 `;
 
-export const FinalizeOrder = styled(Link)`
+export const FinalizeOrder = styled.button`
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -216,12 +226,28 @@ export const FinalizeOrder = styled(Link)`
 	font-size: 14px;
 	font-weight: 700;
 	text-transform: uppercase;
+	transition: opacity 0.2s ease-in-out;
+	outline: none;
+	border: none;
+	cursor: pointer;
+	&:hover, &:active, &:focus{
+		opacity: 0.8;
+	
+	}
+	@media (max-width: 768px) {
+		max-width: 100%;
+	}
 `;
 
 export const Footer = styled.div`
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	gap: 16px;
+		@media (max-width: 768px) {
+		flex-direction: column-reverse;
+		align-items: flex-end;
+	}
 `;
 
 export const FooterTotal = styled.div`
@@ -243,4 +269,106 @@ export const TotalPrice = styled.div`
 	color: #2F2E41;
 	font-size: 24px;
 	font-weight: 700;
+`;
+
+export const spin = keyframes`
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+`;
+
+export const LoadSpinner = styled(Image)`
+  animation: ${spin} 2s linear infinite;
+`;
+
+export const BodyMobile = styled.div`
+	display: flex;
+	padding-bottom: 21px;
+	margin-bottom: 21px;
+	border-bottom: 1px solid #999999;
+	gap: 16px;
+	@media (min-width: 768px) {
+		display: none;
+	}
+`;
+
+export const BodyProductMobile = styled.div`
+	flex-direction: column;
+`;
+
+export const ProductTitleMobile = styled.div`
+	color: #2F2E41;
+	font-size: 14px;
+	font-weight: 700;
+`;
+
+export const ProductPriceMobile = styled.div`
+	color: #2F2E41;
+	font-size: 16px;
+	font-weight: 700;
+`;
+
+export const BodyRemoveMobile = styled.div``;
+
+export const BodyQuantityMobile = styled.div`
+	max-width: 171px;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	gap: 11px;
+`;
+
+export const ButtonQuantityMobile = styled.div`
+	background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+`;
+
+export const QuantityMobile = styled.input`
+	border: 1px solid #D9D9D9;
+	border-radius: 4px;
+	width: 100%;
+	text-align: center;
+	max-width: 62px;
+	width: 100%;
+	height: 26px;
+	background-color: #fff;
+	color: #2F2E41;
+	cursor: default;
+	outline: none;
+`;
+
+export const BodySubtotalMobile = styled.div`
+	color: #2F2E41;
+	font-size: 16px;	
+	font-weight: 700;
+`;
+
+export const BodyProductTopBottom = styled.div`
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+`;
+
+export const BodyProductTop = styled.div`
+	display: flex;
+	gap: 16px;
+	justify-content: space-between;
+`;
+
+export const BodyProductBottom = styled.div`
+	display: flex;
+	text-align: center;
+	gap: 16px;
+`;
+
+export const BodySubTotalMobileTitle = styled.div`
+	color: #999999;
+	font-size: 12px;
+	font-weight: 700;
+	text-transform: uppercase;
 `;
