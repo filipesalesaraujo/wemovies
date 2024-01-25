@@ -63,7 +63,7 @@ export const GridCart = styled.div`
 	background-color: #fff;
 	padding: 24px;
 	margin-top: 24px;
-	`;
+`;
 
 export const Header = styled.div`
 	display: flex;

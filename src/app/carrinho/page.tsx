@@ -8,7 +8,7 @@ import iconMinusSign from '../../../public/svgs/carrinho/icon-minus-sign.svg'
 import iconPlusSign from '../../../public/svgs/carrinho/icon-plus-sign.svg'
 import iconTrash from '../../../public/svgs/carrinho/icon-trash.svg'
 
-import { Button, Grid, Section, StyledImage, Title } from './styles';
+import { Body, BodyProduct, BodyQuantity, BodyRemove, BodySubtotal, Button, ButtonQuantity, FinalizeOrder, Footer, FooterTotal, Grid, GridCart, Header, HeaderEmpty, HeaderProduct, HeaderQuantity, HeaderSubtotal, ProductPrice, ProductTitle, ProductTitlePrice, Quantity, Remove, Section, StyledImage, Title, TotalPrice, TotalTitle } from './styles';
 
 import { IProduct, useCart } from '../providers/cart-provider';
 
