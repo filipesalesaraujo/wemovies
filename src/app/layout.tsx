@@ -1,12 +1,15 @@
+
+
 import type { Metadata } from "next";
 
 import { Open_Sans } from "next/font/google";
 
 import "./globals.css";
 
-import StyledComponentsRegistry from "./lib/registry";
-
 import LayoutHeader from "./layouts/header";
+
+import StyledComponentsProvider from "./providers/styled-components-provider";
+import CartProvider from "./providers/cart-provider";
 
 const openSans = Open_Sans({ subsets: ["latin"] });
 
@@ -24,10 +27,12 @@ export default function RootLayout({
 		<html lang="en">
 			<link rel="icon" href="/favicon.ico" sizes="any" />
 			<body className={openSans.className}>
-				<StyledComponentsRegistry>
-					<LayoutHeader />
-					{children}
-				</StyledComponentsRegistry>
+				<StyledComponentsProvider>
+					<CartProvider>
+						<LayoutHeader />
+						{children}
+					</CartProvider>
+				</StyledComponentsProvider>
 			</body>
 		</html>
 	);

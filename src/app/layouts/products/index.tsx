@@ -1,27 +1,32 @@
 'use client';
 
-import { Product } from "./interfaces";
+import React, { useEffect, useState } from 'react';
+
+import { IProduct } from "./interfaces";
 
 import { Grid, Section } from "./styles";
 
 import ComponentProduct from "@/app/components/product";
 
-export async function getData() {
-	const res = await fetch('http://localhost:3001/products');
-	if (!res.ok) {
-		throw new Error('Failed to fetch data')
-	}
-	return res.json()
-}
+export default function LayoutProducts() {
+	const [products, setProducts] = useState<IProduct[]>([]);
 
-export default async function LayoutProducts() {
-
-	const products = await getData()
+	useEffect(() => {
+		fetch('http://localhost:3001/products')
+			.then(res => {
+				if (!res.ok) {
+					throw new Error('Failed to fetch data')
+				}
+				return res.json();
+			})
+			.then(data => setProducts(data))
+			.catch(error => console.error(error));
+	}, []);
 
 	return (
 		<Section>
 			<Grid>
-				{products.map((product: Product) => (
+				{products.map((product: IProduct) => (
 					<ComponentProduct
 						key={product.id}
 						image={product.image}
