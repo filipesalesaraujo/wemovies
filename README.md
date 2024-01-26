@@ -1,36 +1,56 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Documentação do Projeto WeMovies
 
-## Getting Started
+## Sobre o projeto
 
-First, run the development server:
+WeMovies é um projeto desenvolvido com Next.js, React e Styled Components. Ele utiliza um servidor JSON para simular uma API.
 
+## Como executar o projeto
+
+### Pré-requisitos
+
+Para executar este projeto, você precisa ter Node.js e npm instalados em seu ambiente de desenvolvimento.
+
+### Instalação
+
+1. Clone o repositório
+2. Entre no diretório do projeto
+3. Instale as dependências
+
+### Execução
+
+1. Inicie o servidor JSON com o comando:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npx json-server --watch db.json --port 3001
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Em um novo terminal, inicie o servidor de desenvolvimento Next.js
+```bash
+npm run dev
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Agora você pode acessar o front-end em [http://localhost:3000](http://localhost:3000) e o back-end em [http://localhost:3001/products](http://localhost:3001/products)
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Scripts disponíveis
 
-## Learn More
+- `dev`: Inicia o servidor de desenvolvimento Next.js
+- `build`: Cria a versão de produção do projeto
+- `start`: Inicia o servidor de produção Next.js
+- `lint`: Executa o linter no código do projeto
+- `server`: Inicia o servidor JSON
 
-To learn more about Next.js, take a look at the following resources:
+## Dependências
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- `next`: Framework utilizado para criar o projeto
+- `react` e `react-dom`: Biblioteca para construção de interfaces de usuário
+- `styled-components`: Biblioteca para estilização dos componentes
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Dependências de desenvolvimento
 
-## Deploy on Vercel
+- `@types/node`, `@types/react` e `@types/react-dom`: Tipos TypeScript para Node.js e React
+- `eslint` e `eslint-config-next`: Linter para o código do projeto
+- `json-server`: Servidor JSON para simular uma API
+- `typescript`: Linguagem de programação utilizada no projeto
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Versões das dependências
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+As versões exatas das dependências estão especificadas no arquivo `package.json`.
