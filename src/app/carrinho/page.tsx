@@ -76,9 +76,7 @@ export default function PageCarrinho() {
 
 				{isLoading ? (
 					<LoadSpinner src={loadSpinner} alt='' width={62} height={62} />
-				) : cart.length === 0 && isFinalizing ? (
-					<LoadSpinner src={loadSpinner} alt='' width={62} height={62} />
-				) : cart.length === 0 && !isFinalizing ? (
+				) : cart.length === 0 ? (
 					<Grid>
 						<Title>Parece que não há nada por aqui :&#40;</Title>
 						<StyledImage src={imageOfAFemalePerson} alt="" />
@@ -122,15 +120,10 @@ export default function PageCarrinho() {
 									</BodyRemove>
 								</Body>
 
-
 								<BodyMobile>
-
 									<Image src={product.image} alt={product.title} width={64} height={82} />
-
 									<BodyProductTopBottom>
-
 										<BodyProductTop>
-
 											<ProductTitleMobile>{product.title}</ProductTitleMobile>
 											<ProductPriceMobile>
 												{product.price.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}
@@ -139,23 +132,18 @@ export default function PageCarrinho() {
 												<Remove onClick={() => handleRemove(product.id)}><Image src={iconTrash} alt='' /></Remove>
 											</BodyRemoveMobile>
 										</BodyProductTop>
-
 										<BodyProductBottom>
 											<BodyQuantityMobile>
 												<ButtonQuantityMobile onClick={() => handleDecrease(product.id)}><Image src={iconMinusSign} alt='' /></ButtonQuantityMobile>
 												<QuantityMobile type="text" readOnly value={product.quantity} />
 												<ButtonQuantityMobile onClick={() => handleIncrease(product.id)}><Image src={iconPlusSign} alt='' /></ButtonQuantityMobile>
 											</BodyQuantityMobile>
-
 											<BodySubtotalMobile>
 												<BodySubTotalMobileTitle>Subtotal</BodySubTotalMobileTitle>
 												{(product.price * product.quantity).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}
 											</BodySubtotalMobile>
 										</BodyProductBottom>
-
 									</BodyProductTopBottom>
-
-
 								</BodyMobile>
 							</>
 						))}

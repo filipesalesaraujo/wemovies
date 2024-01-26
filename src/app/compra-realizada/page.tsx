@@ -8,17 +8,13 @@ export default function PageCompraRealizada() {
 	return (
 
 		<main>
-
 			<Section>
 				<Grid>
-
 					<Title>Compra realizada com sucesso!</Title>
 					<StyledImage src={manGivingThumbsUp} alt=""></StyledImage>
 					<Button href="/">Voltar</Button>
-
 				</Grid>
 			</Section>
-
 		</main>
 
 	)
