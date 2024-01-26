@@ -61,6 +61,7 @@ export default function PageCarrinho() {
 	const { cart, handleDecrease, handleIncrease, handleRemove, finalizeOrder, isLoading } = useCart();
 
 	const [isFinalizing, setIsFinalizing] = useState(false);
+	
 	const handleFinalizeOrder = async () => {
 		setIsFinalizing(true);
 		await finalizeOrder();
@@ -75,7 +76,7 @@ export default function PageCarrinho() {
 
 				{isLoading ? (
 					<LoadSpinner src={loadSpinner} alt='' width={62} height={62} />
-				) : isFinalizing ? (
+				) : cart.length === 0 && isFinalizing ? (
 					<LoadSpinner src={loadSpinner} alt='' width={62} height={62} />
 				) : cart.length === 0 && !isFinalizing ? (
 					<Grid>

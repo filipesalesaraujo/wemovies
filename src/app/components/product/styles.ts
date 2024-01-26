@@ -1,6 +1,7 @@
-import styled, { css } from "styled-components";
+import styled, { css, keyframes } from "styled-components";
 
 import { IButton } from "./interfaces";
+import Image from "next/image";
 
 export const Card = styled.div`
 	max-width: 309px;
@@ -76,4 +77,14 @@ export const ButtonText = styled.p`
 	font-size: 12px;
 	color: #FFFFFF;
 	text-transform: uppercase;
+`;
+
+export const spin = keyframes`
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+`;
+
+export const LoadSpinner = styled(Image)`
+  animation: ${spin} 2s linear infinite;
+	margin-top: 25px;
 `;

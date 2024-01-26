@@ -24,6 +24,7 @@ export const Logo = styled(Link)`
 	font-size: 20px;
 	font-weight: 700;
 	transition: 0.3s opacity;
+	color: white;
 	&:hover, &:active, &:focus{
 		opacity: 0.6;
 	}

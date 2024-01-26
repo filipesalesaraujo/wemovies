@@ -278,6 +278,7 @@ export const spin = keyframes`
 
 export const LoadSpinner = styled(Image)`
   animation: ${spin} 2s linear infinite;
+	margin-top: 25px;
 `;
 
 export const BodyMobile = styled.div`

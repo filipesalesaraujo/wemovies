@@ -107,6 +107,7 @@ export default function CartProvider({ children }: { children: React.ReactNode }
 		setIsLoading(true);
 		try {
 			dispatch({ type: CLEAR_CART, product: { id: '', title: '', price: 0, image: '', quantity: 0 } });
+			await new Promise(resolve => setTimeout(resolve, 500));
 			await router.push('/compra-realizada');
 		} catch (error) {
 			console.error(error);
