@@ -15,12 +15,15 @@ Para executar este projeto, você precisa ter Node.js e npm instalados em seu am
 1. Clone o repositório
 2. Entre no diretório do projeto
 3. Instale as dependências
+```bash
+npm install
+```
 
 ### Execução
 
 1. Inicie o servidor JSON com o comando:
 ```bash
-npx json-server --watch db.json --port 3001
+npm run server
 ```
 
 2. Em um novo terminal, inicie o servidor de desenvolvimento Next.js
